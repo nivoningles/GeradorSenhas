@@ -7,11 +7,9 @@ public class GeradorSenhas {
     private JLabel txtGeradorDeSenhas;
     private JButton btnGerador;
     private JTextField txtSenhaGerada;
-    private JButton btnLimpar;
     private JTextField txtNumeroCarac;
 
     SenhaAleatoria aleatoria = new SenhaAleatoria();
-    String senhaGerada = "";
     String numeroAleatorio = "";
 
 
@@ -24,16 +22,15 @@ public class GeradorSenhas {
                 try{
                     numeroAleatorio = (aleatoria.gerarSenha(Integer.valueOf((txtNumeroCarac.getText()))));
                     txtSenhaGerada.setText(numeroAleatorio);
+
                 }catch (Exception ex){
                     txtSenhaGerada.setText("Informe um valor numerico");
                 }
 
-
-
-
              }
 
         });
+
     }
 
     public static void main(String[] args) {
