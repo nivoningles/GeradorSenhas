@@ -18,7 +18,7 @@ public class SenhaAleatoria {
     public String gerarSenha (Integer numero) {
 
         if(numero < 5){
-            return "Informe um numero maior que 4 caracteres";
+            return "Informe um número maior que 4 caracteres";
         } else {
 
             this.respostaFinal = "";
@@ -27,6 +27,14 @@ public class SenhaAleatoria {
             this.respostaFinal = this.respostaFinal + this.caracteresEspeciais[gerador.nextInt(30)];
             this.respostaFinal = this.respostaFinal + this.numerosGerados[gerador.nextInt(9)];
             this.respostaFinal = this.respostaFinal + this.letrasMaiusculas[gerador.nextInt(24)];
+
+            String[] todasOsCaracteres = {this.letrasMaiusculas[gerador.nextInt(24)], this.letrasMinusculas[gerador.nextInt(24)], this.caracteresEspeciais[gerador.nextInt(24)],this.numerosGerados[gerador.nextInt(9)]};
+
+            for (int i = 0; i < numero-5; i++) {
+
+                this.respostaFinal = this.respostaFinal + todasOsCaracteres[gerador.nextInt(3)];
+
+            }
 
             return this.respostaFinal.toString();
 
