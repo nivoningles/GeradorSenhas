@@ -20,11 +20,12 @@ public class GeradorSenhas {
              public void actionPerformed(ActionEvent e) {
 
                 try{
+                    txtSenhaGerada.setText("");
                     numeroAleatorio = (aleatoria.gerarSenha(Integer.valueOf((txtNumeroCarac.getText()))));
                     txtSenhaGerada.setText(numeroAleatorio);
 
                 }catch (Exception ex){
-                    txtSenhaGerada.setText("Informe um valor numerico");
+                    txtSenhaGerada.setText("Informe um valor numérico");
                 }
 
              }
@@ -35,9 +36,9 @@ public class GeradorSenhas {
 
     public static void main(String[] args) {
 
-        JFrame frame = new JFrame("Minha Calculadora");
+        JFrame frame = new JFrame("Meu gerador de senhas");
         frame.setContentPane(new GeradorSenhas().panelInicial);
-        frame.setSize(400,400);
+        frame.setSize(300,220);
         frame.setVisible(true);
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
